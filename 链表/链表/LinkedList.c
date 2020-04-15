@@ -21,14 +21,45 @@ typedef struct LinkNodeArray* NodeArray;
 
 
 
-Status createDoubleAcyclicList()
+Status createDoubleAcyclicList(ListNode *l, int data)
 {
     
+    if (*l != NULL) {
+        return Error;
+    }
+    
+    *l = (ListNode)malloc(sizeof(Node));
+    
+    if (*l == NULL) {
+        return Error;
+    }
+    
+    (*l)->value = data;
+    (*l)->prior = NULL;
+    (*l)->next = NULL;
     
     return OK;
 }
 
-
+Status createDoubleCircularList(ListNode *l, int data)
+{
+    
+    if (*l != NULL) {
+        return Error;
+    }
+    
+    *l = (ListNode)malloc(sizeof(Node));
+    
+    if (*l == NULL) {
+        return Error;
+    }
+    
+    (*l)->value = data;
+    (*l)->prior = *l;
+    (*l)->next = *l;
+    
+    return OK;
+}
 
 
 
@@ -58,6 +89,73 @@ Status createSingleAcyclicListListNoHead(ListNode *l, int data)
 
     return OK;
 }
+
+
+Status addToDoubleAcyclicList(ListNode *l, int data)
+{
+    if ((*l) == NULL) {
+        createDoubleAcyclicList(l, data);
+        return OK;
+    }
+    
+    ListNode temp;
+    ListNode newNode;
+    
+    for (temp = *l; temp->next != NULL; temp = temp->next);
+    
+    newNode = (ListNode)malloc(sizeof(Node));
+    newNode->value = data;
+    newNode->next = NULL;
+    
+    newNode->prior = temp;
+    
+    temp->next = newNode;
+    
+    return OK;
+}
+//createDoubleCircularList
+Status addToDoubleCircularList(ListNode *l, int data)
+{
+    
+    if ((*l)==NULL) {
+        createDoubleCircularList(l, data);
+        return OK;
+    }
+    
+    ListNode temp, newNode = NULL;
+    
+    for (temp = *l; temp->next != *l; temp = temp->next);
+    
+    newNode = (ListNode)malloc(sizeof(Node));
+    
+    newNode->value = data;
+    
+    newNode->prior = temp;
+    temp->next = newNode;
+    
+    newNode->next = *l;
+    (*l)->prior = newNode;
+    
+    return OK;
+}
+
+
+Status insertDoubleCircularListAtIndex(ListNode *l, int index, int data)
+{
+    if ((*l) == NULL) {
+        createDoubleCircularList(l, data);
+        return OK;
+    }
+    
+    
+    
+    
+    
+    
+    return OK;
+    
+}
+
 
 
 Status insertSingleAcyclicListToHead(ListNode *l, int value)
