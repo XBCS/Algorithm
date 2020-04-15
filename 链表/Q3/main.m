@@ -31,6 +31,35 @@
 
 
 
+
+
+bool hasCycle(ListNode l)
+{
+    
+    if (l==NULL) {
+        return false;
+    }
+    
+    ListNode p = l;
+    ListNode q = l;
+    
+    while (p && q) {
+        // todo 
+    }
+    
+    if (p==NULL) {
+        return false;
+    }
+
+    if (q==NULL) {
+        return false;
+    }
+    
+    return true;
+}
+
+
+
 void initList()
 {
     ListNode l = NULL;
@@ -43,12 +72,33 @@ void initList()
     insertCircularListsToLast(&l, 5);
     insertCircularListsToLast(&l, 6);
     printListNode(l);
+    printListNode(l);
+    printListNode(l);
+    printListNode(l);
+    printListNode(l);
+    printListNode(l);
 //    printf(<#const char *restrict, ...#>)
     ListNode temp;
     for (temp = l; temp->next != l; temp = temp->next);
     
     temp->next = l->next;
     printListNode(l);
+    temp->next = l->next->next;
+    printListNode(l);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

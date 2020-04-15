@@ -8,8 +8,15 @@
 
 #include "LinkedList.h"
 
+#define Max_Size 1000
 
+struct LinkNodeArray
+{
+    ListNode* node;
+    int len;
+};
 
+typedef struct LinkNodeArray* NodeArray;
 
 
 
@@ -192,25 +199,80 @@ Status insertCircularListsAtIndex(ListNode *l, int index, int data)
 }
 
 
+
+
+
+
+
+int getPlaceWithContainerElement(NodeArray nodeArray, ListNode node)
+{
+    
+    for (int i = 0; i < nodeArray->len; i++) {
+        
+        ListNode temp = nodeArray->node[i];
+        if (temp == node) {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+
 void printListNode(ListNode l)
 {
-    ListNode temp = l;
     
+    // 只满足单链表及从头开始的环形链表, 不满足蝌蚪状环形链表的打印.
+//    ListNode temp = l;
+//
+//    while (temp != NULL && temp->next!=l) {
+//
+//        if (temp) {
+//            printf("%3d", temp->value);
+//        }
+//
+//        temp = temp->next;
+//    }
+//    if (temp && temp->next == l) {
+//        printf("%3d", temp->value);
+//    }
     
-    
-    
-    
-    while (temp != NULL && temp->next!=l) {
-        
-        if (temp) {
-            printf("%3d", temp->value);
-        }
-        
-        temp = temp->next;
+    if (l == NULL) {
+        return;
     }
-    if (temp && temp->next == l) {
-        printf("%3d", temp->value);
+    
+    NodeArray nodeArray = (NodeArray)malloc(sizeof(struct LinkNodeArray));
+    
+    nodeArray->node = (ListNode*)malloc(sizeof(ListNode) * Max_Size);
+    nodeArray->len = 0;
+    
+    
+    ListNode temp = l;
+    int i = 0;
+    int place = -1;
+    while (temp) {
+        place = getPlaceWithContainerElement(nodeArray, temp);
+        if (place == -1) {
+            nodeArray->node[i] = temp;
+            nodeArray->len++;
+        } else
+        {
+            break;
+        }
+        temp = temp->next;
+        i++;
+    }
+    
+    for (int j = 0; j<nodeArray->len; j++) {
+        printf("%3d", nodeArray->node[j]->value);
+    }
+    
+    if (place != -1) {
+        printf("%3d", nodeArray->node[place]->value);
     }
     
     printf("\n");
+    
+    free(nodeArray->node);
+    free(nodeArray);
 }

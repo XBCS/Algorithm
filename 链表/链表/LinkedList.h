@@ -12,6 +12,7 @@
 //#include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 #define OK 1
 #define Error -1
