@@ -21,7 +21,18 @@ typedef struct LinkNodeArray* NodeArray;
 
 
 
-Status createSingleLinkListWithHead(ListNode *l)
+Status createDoubleAcyclicList()
+{
+    
+    
+    return OK;
+}
+
+
+
+
+
+Status createSingleAcyclicListWithHead(ListNode *l)
 {
     if (*l) {
         return Error;
@@ -35,7 +46,7 @@ Status createSingleLinkListWithHead(ListNode *l)
     return OK;
 }
 
-Status createSingleLinkListNoHead(ListNode *l, int data)
+Status createSingleAcyclicListListNoHead(ListNode *l, int data)
 {
     if (*l) {
         return Error;
@@ -49,7 +60,7 @@ Status createSingleLinkListNoHead(ListNode *l, int data)
 }
 
 
-Status insertSingleLinkListToHead(ListNode *l, int value)
+Status insertSingleAcyclicListToHead(ListNode *l, int value)
 {
     
     if ((*l) == NULL) {
@@ -82,7 +93,7 @@ Status insertSingleLinkListToHead(ListNode *l, int value)
 }
 
 
-Status insertSingleLinkListToLast(ListNode *l, int value)
+Status insertSingleAcyclicListToLast(ListNode *l, int value)
 {
     if ((*l) == NULL) {
         return Error;
@@ -121,7 +132,7 @@ Status insertSingleLinkListToLast(ListNode *l, int value)
 }
 
 
-Status createCircularLists(ListNode *l, int data)
+Status createSingleCircularList(ListNode *l, int data)
 {
     if ((*l)!=NULL) {
         return Error;
@@ -136,7 +147,7 @@ Status createCircularLists(ListNode *l, int data)
 
 
 
-Status insertCircularListsToHead(ListNode *l, int data)
+Status insertSingleCircularListToHead(ListNode *l, int data)
 {
     if ((*l) == NULL) {
         return Error;
@@ -157,7 +168,7 @@ Status insertCircularListsToHead(ListNode *l, int data)
 }
 
 
-Status insertCircularListsToLast(ListNode *l, int data)
+Status insertSingleCircularListToLast(ListNode *l, int data)
 {
     if ((*l) == NULL) {
         return Error;
@@ -176,7 +187,7 @@ Status insertCircularListsToLast(ListNode *l, int data)
 }
 
 
-Status insertCircularListsAtIndex(ListNode *l, int index, int data)
+Status insertSingleCircularListAtIndex(ListNode *l, int index, int data)
 {
     if ((*l) == NULL) {
         return Error;

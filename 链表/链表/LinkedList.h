@@ -22,40 +22,42 @@
 
 typedef int Status;
 
-//struct NODE Node;
-struct LISTNODE
+
+struct LinkedListNode
 {
     int value;
-    struct LISTNODE *next;
+    struct LinkedListNode *prior;
+    struct LinkedListNode *next;
 };
 
 
-static struct LISTNODE Node;
+static struct LinkedListNode Node;
 
 
-typedef struct LISTNODE* ListNode;
+typedef struct LinkedListNode* ListNode;
 
 
 
 
-Status createSingleLinkListWithHead(ListNode *l);
+Status createSingleAcyclicListWithHead(ListNode *l);
 
-Status createSingleLinkListNoHead(ListNode *l, int data);
+Status createSingleAcyclicListListNoHead(ListNode *l, int data);
 
+Status insertSingleAcyclicListToHead(ListNode *l, int value);
 
-Status insertSingleLinkListToHead(ListNode *l, int value);
+Status insertSingleAcyclicListToLast(ListNode *l, int value);
 
-Status insertSingleLinkListToLast(ListNode *l, int value);
+Status createSingleCircularList(ListNode *l, int data);
 
-Status createCircularLists(ListNode *l, int data);
+Status insertSingleCircularListToHead(ListNode *l, int data);
 
-Status insertCircularListsToHead(ListNode *l, int data);
+Status insertSingleCircularListToLast(ListNode *l, int data);
 
-Status insertCircularListsToLast(ListNode *l, int data);
+Status insertSingleCircularListAtIndex(ListNode *l, int index, int data);
 
-Status insertCircularListsAtIndex(ListNode *l, int index, int data);
 
 void printListNode(ListNode l);
+
 
 
 

@@ -71,25 +71,25 @@
 void initListNode(ListNode *L1)
 {
     Status s;
-    s = createSingleLinkListWithHead(L1);
-    insertSingleLinkListToHead(L1, 6);
-    insertSingleLinkListToHead(L1, 6);
-    insertSingleLinkListToHead(L1, 5);
-    insertSingleLinkListToHead(L1, 4);
-    insertSingleLinkListToHead(L1, 4);
-    insertSingleLinkListToHead(L1, 4);
-    insertSingleLinkListToHead(L1, 4);
-    insertSingleLinkListToHead(L1, 3);
-    insertSingleLinkListToHead(L1, 3);
-    insertSingleLinkListToHead(L1, 2);
-    insertSingleLinkListToHead(L1, 2);
-    insertSingleLinkListToHead(L1, 2);
-    insertSingleLinkListToHead(L1, 1);
-    insertSingleLinkListToHead(L1, 1);
-//    insertSingleLinkListToHead(L1, 1);
-//    insertSingleLinkListToHead(L1, 1);
-//    insertSingleLinkListToHead(L1, 1);
-//    insertSingleLinkListToHead(L1, 1);
+    s = createSingleAcyclicListWithHead(L1);
+    insertSingleAcyclicListToHead(L1, 6);
+    insertSingleAcyclicListToHead(L1, 6);
+    insertSingleAcyclicListToHead(L1, 5);
+    insertSingleAcyclicListToHead(L1, 4);
+    insertSingleAcyclicListToHead(L1, 4);
+    insertSingleAcyclicListToHead(L1, 4);
+    insertSingleAcyclicListToHead(L1, 4);
+    insertSingleAcyclicListToHead(L1, 3);
+    insertSingleAcyclicListToHead(L1, 3);
+    insertSingleAcyclicListToHead(L1, 2);
+    insertSingleAcyclicListToHead(L1, 2);
+    insertSingleAcyclicListToHead(L1, 2);
+    insertSingleAcyclicListToHead(L1, 1);
+    insertSingleAcyclicListToHead(L1, 1);
+//    insertSingleAcyclicListToHead(L1, 1);
+//    insertSingleAcyclicListToHead(L1, 1);
+//    insertSingleAcyclicListToHead(L1, 1);
+//    insertSingleAcyclicListToHead(L1, 1);
     
     
 }

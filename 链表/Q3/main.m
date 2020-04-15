@@ -72,28 +72,25 @@ void initList()
     ListNode m = NULL;
     ListNode n = NULL;
     
-    createSingleLinkListNoHead(&m, 1);
-    createSingleLinkListWithHead(&n);
-    createCircularLists(&l, 1);
+    createSingleAcyclicListListNoHead(&m, 1);
+    createSingleAcyclicListWithHead(&n);
+    createSingleCircularList(&l, 1);
     
-    insertSingleLinkListToHead(&m, 2);
-    insertSingleLinkListToHead(&m, 3);
-    insertSingleLinkListToHead(&m, 4);
-    insertSingleLinkListToHead(&m, 5);
-    insertSingleLinkListToHead(&n, 2);
-    insertSingleLinkListToHead(&n, 3);
-    insertSingleLinkListToHead(&n, 4);
-    insertSingleLinkListToHead(&n, 5);
+    insertSingleAcyclicListToHead(&m, 2);
+    insertSingleAcyclicListToHead(&m, 3);
+    insertSingleAcyclicListToHead(&m, 4);
+    insertSingleAcyclicListToHead(&m, 5);
+    insertSingleAcyclicListToHead(&n, 2);
+    insertSingleAcyclicListToHead(&n, 3);
+    insertSingleAcyclicListToHead(&n, 4);
+    insertSingleAcyclicListToHead(&n, 5);
+
     
-    
-    
-    
-    
-    insertCircularListsToLast(&l, 2);
-    insertCircularListsToLast(&l, 3);
-    insertCircularListsToLast(&l, 4);
-    insertCircularListsToLast(&l, 5);
-    insertCircularListsToLast(&l, 6);
+    insertSingleCircularListToLast(&l, 2);
+    insertSingleCircularListToLast(&l, 3);
+    insertSingleCircularListToLast(&l, 4);
+    insertSingleCircularListToLast(&l, 5);
+    insertSingleCircularListToLast(&l, 6);
     printListNode(l);
     
 //    printf(<#const char *restrict, ...#>)
@@ -114,13 +111,13 @@ void initList()
     printf(" \n --------- \n");
     
     bool hasC = hasCycle(l);
-    printf("\n ---- 循环链表: %d ---- \n", hasC);
+    printf("\n ---- 循环单向链表: %d ---- \n", hasC);
     
     hasC = hasCycle(m);
-    printf("\n ---- 无头单链表: %d ---- \n", hasC);
+    printf("\n ---- 无头非循环单向链表: %d ---- \n", hasC);
     
     hasC = hasCycle(n);
-    printf("\n ---- 有头单链表: %d ---- \n", hasC);
+    printf("\n ---- 有头非循环单向链表: %d ---- \n", hasC);
     
 
 }

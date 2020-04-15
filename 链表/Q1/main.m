@@ -42,7 +42,7 @@ ListNode mergeList1(ListNode *L1, ListNode *L2)
     ListNode head = NULL;
     ListNode temp, l1, l2;
     
-    Status s = createSingleLinkListWithHead(&head);
+    Status s = createSingleAcyclicListWithHead(&head);
     printf("%d \n", s);
     temp = head;
     l1 = (*L1)->next;
@@ -137,21 +137,21 @@ ListNode mergeList2(ListNode *l1, ListNode *l2)
 void initListNode(ListNode *L1, ListNode *L2)
 {
     Status s;
-    s = createSingleLinkListWithHead(L1);
-    s = createSingleLinkListWithHead(L2);
+    s = createSingleAcyclicListWithHead(L1);
+    s = createSingleAcyclicListWithHead(L2);
     
-    insertSingleLinkListToHead(L1, 5);
-    insertSingleLinkListToHead(L1, 3);
-    insertSingleLinkListToHead(L1, 1);
-    insertSingleLinkListToHead(L1, 1);
+    insertSingleAcyclicListToHead(L1, 5);
+    insertSingleAcyclicListToHead(L1, 3);
+    insertSingleAcyclicListToHead(L1, 1);
+    insertSingleAcyclicListToHead(L1, 1);
     
     printListNode(*L1);
     
     
-    insertSingleLinkListToHead(L2, 9);
-    insertSingleLinkListToHead(L2, 8);
-    insertSingleLinkListToHead(L2, 4);
-    insertSingleLinkListToHead(L2, 1);
+    insertSingleAcyclicListToHead(L2, 9);
+    insertSingleAcyclicListToHead(L2, 8);
+    insertSingleAcyclicListToHead(L2, 4);
+    insertSingleAcyclicListToHead(L2, 1);
     printListNode(*L2);
 }
 
