@@ -43,19 +43,25 @@ bool hasCycle(ListNode l)
     ListNode p = l;
     ListNode q = l;
     
-    while (p && q) {
-        // todo 
-    }
-    
-    if (p==NULL) {
-        return false;
-    }
+    while (p && q && q->next) {
+        
+        if (p->next == NULL) {
+            return false;
+        }
 
-    if (q==NULL) {
-        return false;
+        if (q->next->next==NULL) {
+            return false;
+        }
+        
+        if (p->next == q->next->next) {
+            return true;
+        }
+        
+        p = p->next;
+        q = q->next->next;
     }
     
-    return true;
+    return false;
 }
 
 
@@ -63,8 +69,25 @@ bool hasCycle(ListNode l)
 void initList()
 {
     ListNode l = NULL;
+    ListNode m = NULL;
+    ListNode n = NULL;
     
+    createSingleLinkListNoHead(&m, 1);
+    createSingleLinkListWithHead(&n);
     createCircularLists(&l, 1);
+    
+    insertSingleLinkListToHead(&m, 2);
+    insertSingleLinkListToHead(&m, 3);
+    insertSingleLinkListToHead(&m, 4);
+    insertSingleLinkListToHead(&m, 5);
+    insertSingleLinkListToHead(&n, 2);
+    insertSingleLinkListToHead(&n, 3);
+    insertSingleLinkListToHead(&n, 4);
+    insertSingleLinkListToHead(&n, 5);
+    
+    
+    
+    
     
     insertCircularListsToLast(&l, 2);
     insertCircularListsToLast(&l, 3);
@@ -72,35 +95,34 @@ void initList()
     insertCircularListsToLast(&l, 5);
     insertCircularListsToLast(&l, 6);
     printListNode(l);
-    printListNode(l);
-    printListNode(l);
-    printListNode(l);
-    printListNode(l);
-    printListNode(l);
+    
 //    printf(<#const char *restrict, ...#>)
     ListNode temp;
     for (temp = l; temp->next != l; temp = temp->next);
     
     temp->next = l->next;
     printListNode(l);
+    
     temp->next = l->next->next;
     printListNode(l);
     
+    printf(" \n --------- \n");
     
+    printListNode(l);
+    printListNode(m);
+    printListNode(n);
+    printf(" \n --------- \n");
     
+    bool hasC = hasCycle(l);
+    printf("\n ---- 循环链表: %d ---- \n", hasC);
     
+    hasC = hasCycle(m);
+    printf("\n ---- 无头单链表: %d ---- \n", hasC);
     
+    hasC = hasCycle(n);
+    printf("\n ---- 有头单链表: %d ---- \n", hasC);
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
 
 
