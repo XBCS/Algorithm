@@ -51,6 +51,8 @@ Status createSingleCircularList(ListNode *l, int data);
 
 Status insertSingleCircularListToHead(ListNode *l, int data);
 
+Status insertSingleAcyclicList(ListNode *l, ListNode node);
+
 Status insertSingleCircularListToLast(ListNode *l, int data);
 
 Status insertSingleCircularListAtIndex(ListNode *l, int index, int data);

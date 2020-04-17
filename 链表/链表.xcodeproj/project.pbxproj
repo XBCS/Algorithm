@@ -16,6 +16,7 @@
 		04D494C42445B508004C574A /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 04D494BF2444553D004C574A /* LinkedList.c */; };
 		04D494C52445B509004C574A /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 04D494BF2444553D004C574A /* LinkedList.c */; };
 		04D494CD24470007004C574A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D494CC24470007004C574A /* main.m */; };
+		04D494D124495D7C004C574A /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 04D494BF2444553D004C574A /* LinkedList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -363,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D494D124495D7C004C574A /* LinkedList.c in Sources */,
 				04D494CD24470007004C574A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

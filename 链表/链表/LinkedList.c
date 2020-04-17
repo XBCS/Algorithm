@@ -71,6 +71,10 @@ Status createSingleAcyclicListWithHead(ListNode *l)
     
     *l = (ListNode)malloc(sizeof(Node));
     
+    if (*l == NULL) {
+        return Error;
+    }
+    
     (*l)->value = Head;
     (*l)->next = NULL;
 
@@ -84,6 +88,9 @@ Status createSingleAcyclicListListNoHead(ListNode *l, int data)
     }
     
     *l = (ListNode)malloc(sizeof(Node));
+    if (*l == NULL) {
+        return Error;
+    }
     (*l)->value = data;
     (*l)->next = NULL;
 
@@ -147,13 +154,12 @@ Status insertDoubleCircularListAtIndex(ListNode *l, int index, int data)
         return OK;
     }
     
-    
-    
+    // todo
+
     
     
     
     return OK;
-    
 }
 
 
@@ -188,6 +194,41 @@ Status insertSingleAcyclicListToHead(ListNode *l, int value)
     }
     
     return OK;
+}
+
+
+Status insertSingleAcyclicList(ListNode *l, ListNode node)
+{
+    
+    if (node == NULL) {
+        return Error;
+    }
+    
+    if ((*l) == NULL) {
+        *l = node;
+        return OK;
+    }
+    
+    ListNode temp;
+    // 有头
+    if ((*l)->value == Head) {
+        temp = (*l)->next;
+    } else
+    {
+        temp = *l;
+    }
+    
+    if (temp == NULL) {
+        (*l)->next = node;
+        return OK;
+    }
+    
+    for (; temp->next != NULL; temp= temp->next);
+    
+    temp->next = node;
+    
+    return OK;
+    
 }
 
 
@@ -347,6 +388,7 @@ void printListNode(ListNode l)
 //    }
     
     if (l == NULL) {
+        printf("\n 链表为: NULL \n");
         return;
     }
     
@@ -373,11 +415,11 @@ void printListNode(ListNode l)
     }
     
     for (int j = 0; j<nodeArray->len; j++) {
-        printf("%3d", nodeArray->node[j]->value);
+        printf("%4d", nodeArray->node[j]->value);
     }
     
     if (place != -1) {
-        printf("%3d", nodeArray->node[place]->value);
+        printf("%4d", nodeArray->node[place]->value);
     }
     
     printf("\n");
